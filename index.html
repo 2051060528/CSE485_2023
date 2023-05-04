@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form nhập dữ liệu sinh viên</title>
+</head>
+<body>
+    <h1>Form nhập dữ liệu sinh viên</h1>
+    <form method="POST" action="them_sinhvien.php">
+        <label for="masv">Mã sinh viên:</label>
+        <input type="text" id="masv" name="masv" required>
+        <br><br>
+
+        <label for="hoten">Họ tên:</label>
+        <input type="text" id="hoten" name="hoten" required>
+        <br><br>
+
+        <label for="gioitinh">Giới tính:</label>
+        <input type="radio" id="nam" name="gioitinh" value="Nam" required>
+        <label for="nam">Nam</label>
+        <input type="radio" id="nu" name="gioitinh" value="Nữ" required>
+        <label for="nu">Nữ</label>
+        <br><br>
+
+        <label for="ngaysinh">Ngày sinh:</label>
+        <input type="date" id="ngaysinh" name="ngaysinh" required>
+        <br><br>
+
+        <label for="diachi">Địa chỉ:</label>
+        <input type="text" id="diachi" name="diachi" required>
+        <br><br>
+
+        <input type="submit" name="submit" value="Thêm sinh viên">
+    </form>
+</body>
+</html>
