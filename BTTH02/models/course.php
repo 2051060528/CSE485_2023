@@ -58,8 +58,8 @@ function getCourses()
 
     if ($courseResult->num_rows > 0) {
         echo "<h2>Danh sách khóa học:</h2>";
-        echo "<table>";
-        echo "<tr><th>Mã khóa học</th><th>Tên khóa học</th><th>Mô tả</th><th>Ngày học</th></tr>";
+        echo "<table class=\"course-table\">";
+        echo "<tr><th>Mã khóa học</th><th>Tên khóa học</th><th>Mô tả</th><th>Ngày học</th><th></th></tr>";
 
         while ($row = $courseResult->fetch_assoc()) {
             echo "<tr>";
@@ -93,3 +93,23 @@ getCourses();
 // Đóng kết nối cơ sở dữ liệu
 $conn->close();
 ?>
+<style>
+    h1,h2 {
+        text-align: center;
+    }
+    .course-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .course-table th,
+    .course-table td {
+        padding: 8px;
+        text-align: center;
+        border: 1px solid #ddd;    
+    }
+
+    .course-table th {
+        background-color: #f2f2f2;
+    }
+</style>
