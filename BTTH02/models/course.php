@@ -59,7 +59,7 @@ function getCourses()
     if ($courseResult->num_rows > 0) {
         echo "<h2>Danh sách khóa học:</h2>";
         echo "<table class=\"course-table\">";
-        echo "<tr><th>Mã khóa học</th><th>Tên khóa học</th><th>Mô tả</th><th>Ngày học</th><th></th></tr>";
+        echo "<tr><th>Mã khóa học</th><th>Tên khóa học</th><th>Mô tả</th><th>Ngày học</th><th>Đăng ký</th><th>Hủy đăng ký</th></tr>";
 
         while ($row = $courseResult->fetch_assoc()) {
             echo "<tr>";
@@ -68,10 +68,16 @@ function getCourses()
             echo "<td>" . $row['Desception'] . "</td>";
             echo "<td>" . $row['Schedule'] . "</td>";
             echo "<td>";
-            echo "<form action=\"index.php\" method=\"post\">";
+            echo "<form action=\"class.php\" method=\"post\">";
             echo "<input type=\"hidden\" name=\"studentID\" value=\"1\">"; // Thay đổi giá trị của studentID tương ứng với sinh viên đăng nhập
             echo "<input type=\"hidden\" name=\"courseID\" value=\"" . $row['CourseID'] . "\">";
             echo "<input type=\"submit\" name=\"register\" value=\"Đăng ký\">";
+            echo "</form>";
+            echo "</td>";
+            echo "<td>";
+            echo "<form action=\"student.php\" method=\"post\">";
+            echo "<input type=\"hidden\" name=\"studentID\" value=\"1\">"; // Thay đổi giá trị của studentID tương ứng với sinh viên đăng nhập
+            echo "<input type=\"hidden\" name=\"courseID\" value=\"" . $row['CourseID'] . "\">";
             echo "<input type=\"submit\" name=\"unregister\" value=\"Hủy đăng ký\">";
             echo "</form>";
             echo "</td>";
@@ -94,9 +100,10 @@ getCourses();
 $conn->close();
 ?>
 <style>
-    h1,h2 {
+    h1, h2 {
         text-align: center;
     }
+
     .course-table {
         width: 100%;
         border-collapse: collapse;
@@ -106,7 +113,7 @@ $conn->close();
     .course-table td {
         padding: 8px;
         text-align: center;
-        border: 1px solid #ddd;    
+        border: 1px solid #ddd;
     }
 
     .course-table th {
