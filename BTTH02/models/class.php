@@ -29,7 +29,7 @@ if (isset($_POST['courseID'])) {
     if ($result->num_rows > 0) {
         echo "<h2>Danh sách lớp học:</h2>";
         echo "<table class=\"class-table\">";
-        echo "<tr><th>ClassID</th><th>Title</th><th>NameIns</th><th>StartTime</th><th>EndTime</th></tr>";
+        echo "<tr><th>Mã lớp</th><th>Tên khóa học</th><th>Tên giảng viên</th><th>Thời gian bắt đầu</th><th>Thời gian kết thúc</th><th>Đăng ký</th></tr>";
 
         while ($row = $result->fetch_assoc()) {
             echo "<tr>";
@@ -38,7 +38,13 @@ if (isset($_POST['courseID'])) {
             echo "<td>" . $row['NameIns'] . "</td>";
             echo "<td>" . $row['StartTime'] . "</td>";
             echo "<td>" . $row['EndTime'] . "</td>";
-            echo "</tr>";
+            echo "<td>";
+            echo "<form action=\"schedule.php\" method=\"post\">";
+            echo "<input type=\"hidden\" name=\"studentID\" value=\"1\">"; 
+            echo "<input type=\"hidden\" name=\"classID\" value=\"" . $row['ClassID'] . "\">";
+            echo "<button type=\"submit\" name=\"register\">Đăng ký</button>";
+            echo "</form>";
+            echo "</td>";
         }
 
         echo "</table>";
