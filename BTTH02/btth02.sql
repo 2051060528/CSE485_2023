@@ -35,12 +35,12 @@ CREATE TABLE IF NOT EXISTS `attendance` (
 /*!40000 ALTER TABLE `attendance` DISABLE KEYS */;
 INSERT INTO `attendance` (`AttendanceID`, `AttendanceTime`, `AttendanceStatus`, `StudentID`, `ClassID`) VALUES
 	(1, '2023-05-21 09:00:00', 'Có mặt', 1, 1),
-	(2, '2023-05-21 10:30:00', 'Có mặt', 2, 1),
-	(3, '2023-05-21 09:00:00', 'Có mặt', 3, 2),
-	(4, '2023-05-21 13:30:00', 'Có mặt', 4, 2),
-	(5, '2023-05-21 09:00:00', 'Có mặt', 5, 3),
-	(6, '2023-05-21 14:00:00', 'Vắng mặt', 6, 3),
-	(7, '2023-05-21 09:00:00', 'Có mặt', 7, 4),
+	(2, '2023-05-21 10:30:00', 'Vắng mặt', 2, 1),
+	(3, '2023-05-21 09:00:00', 'Có mặt', 3, 1),
+	(4, '2023-05-21 13:30:00', 'Vắng mặt', 4, 1),
+	(5, '2023-05-21 09:02:00', 'Muộn', 5, 1),
+	(6, '2023-05-23 14:00:00', 'Vắng mặt', 6, 3),
+	(7, '2023-05-23 09:00:00', 'Có mặt', 7, 4),
 	(8, '2023-05-21 16:00:00', 'Có mặt', 8, 4),
 	(9, '2023-05-21 09:00:00', 'Có mặt', 9, 5),
 	(10, '2023-05-21 11:30:00', 'Vắng mặt', 10, 5),
@@ -72,7 +72,7 @@ CREATE TABLE IF NOT EXISTS `classschedules` (
 -- Dumping data for table btth02.classschedules: ~30 rows (approximately)
 /*!40000 ALTER TABLE `classschedules` DISABLE KEYS */;
 INSERT INTO `classschedules` (`ScheduleID`, `ClassDate`, `StartTime`, `EndTime`, `Location`, `ClassID`) VALUES
-	(1, '2023-05-22', '09:00:00', '11:00:00', 'Phòng A1', 1),
+	(1, '2023-05-21', '09:00:00', '11:00:00', 'Phòng A1', 1),
 	(2, '2023-05-23', '14:00:00', '16:00:00', 'Phòng B2', 2),
 	(3, '2023-05-24', '10:30:00', '12:30:00', 'Phòng C3', 3),
 	(4, '2023-05-25', '13:00:00', '15:00:00', 'Phòng D4', 4),
