@@ -28,7 +28,7 @@ if (isset($_POST['classID'])) {
     if ($result->num_rows > 0) {
         echo "<h2>Danh sách lịch học:</h2>";
         echo "<table class=\"class-table\">";
-        echo "<tr><th>ClassID</th><th>Title</th><th>ScheduleID</th><th>ClassDate</th><th>StartTime</th><th>EndTime</th><th>Location</th></tr>";
+        echo "<tr><th>Mã lớp học</th><th>Tên khóa học</th><th>Mã lịch học</th><th>Ngày học</th><th>Thời gian bắt đầu</th><th>Thời gian kết thúc</th><th>Địa điểm</th></tr>";
 
         while ($row = $result->fetch_assoc()) {
             echo "<tr>";
